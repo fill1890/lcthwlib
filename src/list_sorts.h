@@ -6,7 +6,7 @@
 typedef int (*List_compare)(const char* a, const char* b);
 
 int List_bubble_sort(List* words, List_compare cmp);
-int List_merge_sort(List* words, List_compare cmp);
+List* List_merge_sort(List* words, List_compare cmp);
 
 #endif
 
