@@ -34,7 +34,9 @@ void* List_shift(List* list);
 
 void* List_remove(List* list, ListNode* node);
 
-void List_swap(ListNode* node1, ListNode* node2);
+void List_swap(List* list, ListNode* node1, ListNode* node2);
+
+void List_print(List* list);
 
 #define LIST_FOREACH(L, S, M, V) ListNode* _node = NULL;\
     ListNode* V = NULL;\
