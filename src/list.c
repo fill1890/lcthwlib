@@ -149,7 +149,7 @@ void List_swap(List* list, ListNode* node1, ListNode* node2) {
     if(switchLast == 2) list->last = node2;
     if(switchLast == 1) list->last = node1;
     
-error:
+//error:
     return;
 }
 

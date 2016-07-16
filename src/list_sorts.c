@@ -1,31 +1,42 @@
 #include <dbg.h>
 #include <list_sorts.h>
 
-int List_bubble_sort(List* words, List_compare cmp) {
+int List_bubble_sort(List* list, List_compare cmp) {
 
-    if(words->count < 2) {
+    if(list->count < 2) {
         return 0;
     }
 
-    int count = List_count(words);
+    //int count = List_count(list);
     int hasSwapped = FALSE;
-    int i = 0;
-    int diff;
+    //int i = 0;
+    //int diff;
 
-    ListNode* current;
-    ListNode* next;
+    //ListNode* current;
+    //ListNode* next;
 
     // while hasSwapped == TRUE
     // But at least one pass required
     do {
         hasSwapped = FALSE;
-        current = words->first;
+        
+        LIST_FOREACH(list, first, next, cur) {
+            if(cur->next) {
+                if(cmp(cur->value, cur->next->value) > 0) {
+                    List_swap(list, cur, cur->next);
+                    hasSwapped = TRUE;
+                }
+            }
+        }
+        
+        /*
+        current = list->first;
         next = current->next;
         for(i = 0; i < count - 1; i++) {
             diff = cmp((char*)current->value, (char*)next->value);
             if(diff > 0) {
                 // Swap elements
-                List_swap(words, current, next);
+                List_swap(list, current, next);
                 hasSwapped = TRUE;
             }
             // Otherwise leave alone
@@ -33,6 +44,7 @@ int List_bubble_sort(List* words, List_compare cmp) {
             current = next;
             next = next->next;
         }
+        */
     } while(hasSwapped == TRUE);
     
     return 0;
