@@ -1,0 +1,3 @@
+Rework Makefile to produce lcthw/[libs].a
+Rename list items to dllist (Double-linked list)
+
