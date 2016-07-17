@@ -1,7 +1,7 @@
 #ifndef _list_sorts_h
 #define _list_sorts_h
 
-#include <list.h>
+#include <dllist.h>
 
 typedef int (*List_compare)(const char* a, const char* b);
 
