@@ -23,28 +23,12 @@ int List_bubble_sort(List* list, List_compare cmp) {
         LIST_FOREACH(list, first, next, cur) {
             if(cur->next) {
                 if(cmp(cur->value, cur->next->value) > 0) {
-                    List_swap(list, cur, cur->next);
+                    List_swap(cur, cur->next);
                     hasSwapped = TRUE;
                 }
             }
         }
         
-        /*
-        current = list->first;
-        next = current->next;
-        for(i = 0; i < count - 1; i++) {
-            diff = cmp((char*)current->value, (char*)next->value);
-            if(diff > 0) {
-                // Swap elements
-                List_swap(list, current, next);
-                hasSwapped = TRUE;
-            }
-            // Otherwise leave alone
-            
-            current = next;
-            next = next->next;
-        }
-        */
     } while(hasSwapped == TRUE);
     
     return 0;

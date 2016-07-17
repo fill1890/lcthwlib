@@ -31,6 +31,9 @@ int is_sorted(List* words) {
 char* test_bubble_sort() {
     List* words = create_words();
 
+    List_destroy(words);
+    words = create_words();
+
     // Should work on a list that needs sorting
     int rc = List_bubble_sort(words, (List_compare)strcmp);
     mu_assert(rc == 0, "Bubble sort failed.");

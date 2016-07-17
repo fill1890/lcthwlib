@@ -74,14 +74,7 @@ char* test_remove() {
 char* test_swap() {
     mu_assert(List_count(list) != 0, "Wrong count before swap.");
 
-    debug("Pre-swap first: %p", (void*)List_first(list));
-    debug("Pre-swap last: %p", (void*)List_last(list));
-    debug("Pointer equality: %d", List_first(list) == list->first);
-
-    List_swap(list, list->first, list->last);
-
-    debug("Post-swap first: %p", (void*)List_first(list));
-    debug("Post-swap last: %p", (void*)List_last(list));
+    List_swap(list->first, list->last);
 
     mu_assert(List_first(list) == test1, "Wrong value on swap.");
     mu_assert(List_last(list) == test3, "Wrong value on swap.");

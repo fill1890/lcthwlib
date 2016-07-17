@@ -111,46 +111,14 @@ error:
     return result;
 }
 
-// Assumes node1 comes before node2
-// This may be corrected at some point
-// TODO: Improve testing for this, a lot
-void List_swap(List* list, ListNode* node1, ListNode* node2) {
-    //check(node1->next == node2->prev, "Non-consecutive swapping not yet implemented.");
+// Note: This does not manipulate pointers,
+// only swaps values. Good idea or not?
+void List_swap(ListNode* node1, ListNode* node2) {
+    void* temp = node1->value;
+    node1->value = node2->value;
+    node2->value = temp;
 
-    ListNode* temp = node1->next;
-    
-    if(node1->prev) {
-        node1->prev->next = node2;
-    }
-    if(node2->next) {
-        node2->next->prev = node1;
-    }
-    
-    node1->next = node2->next;
-    node2->prev = temp;
-    node2->next = node1;
-    node1->prev = node2;
-
-    // TODO: Clean this up? Or leave it?
-    int switchFirst = 0;
-    int switchLast = 0;
-    if(list->first == node1) {
-        switchFirst = 2;
-    } else if(list->last == node1) {
-        switchLast = 2;
-    }
-    if(list->first == node2) {
-        switchLast = 1;
-    } else if(list->last == node2) {
-        switchLast = 1;
-    }
-    if(switchFirst == 2) list->first = node2;
-    if(switchFirst == 1) list->first = node1;
-    if(switchLast == 2) list->last = node2;
-    if(switchLast == 1) list->last = node1;
-    
-//error:
-    return;
+   return;
 }
 
 void List_print(List* list) {
