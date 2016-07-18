@@ -1,6 +1,6 @@
 /*
  * Based on code by Andre Reinald then heavily modified by Zed A. Shaw.
- * Then typed in by Andrew.
+ * Then typed in by Andrew. Hey look an emoji: 🖥
 */
 
 #include <stdio.h>
