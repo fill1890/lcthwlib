@@ -27,7 +27,7 @@ all: $(TARGET) test $(PROGRAMS)
 dev: CFLAGS=-g -O0 -Wall -Isrc -Wall -Wextra $(OPTFLAGS)
 dev: all
 
-$(PROGRAMS): CFLAGS += $(TARGET)
+$(PROGRAMS): LDLIBS+=-L./build -llcthw
 
 $(TARGET): CFLAGS += -fPIC
 $(TARGET): build $(OBJECTS)
