@@ -1,7 +1,7 @@
 #include <darray_sorts.h>
 #include <stdlib.h>
 
-#ifdef __linux__
+#ifdef BSD_STDLIB
 #include <bsd/stdlib.h>
 #endif
 
