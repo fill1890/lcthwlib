@@ -1,4 +1,4 @@
-language: c
+language: C
 script: make build/liblcthw.a && make test
 compiler:
 - clang
