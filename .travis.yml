@@ -1,5 +1,5 @@
 language: c
-script: make
+script: make build/liblcthw.a && make test
 compiler:
 - clang
 - gcc
