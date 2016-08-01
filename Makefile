@@ -3,7 +3,7 @@ LDFLAGS=$(OPTLIBS)
 PREFIX?=/usr/local
 
 ifeq ($(shell uname -s),Linux)
-	LDLIBS=-lbsd -lm
+	LDLIBS=-lm
 endif
 
 ifdef $(test -f /usr/include/bsd/stdlib.h && true)
